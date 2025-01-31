@@ -45,6 +45,22 @@ function escapeMarkdownV2(text) {
     return text.replace(/([_*()~`>#+\-=|{}.!])/g, "\\$1");  // Escapa caracteres conflictivos
 }
 
+function recargarUnaVez() {
+    // Verificar si la página ya ha sido recargada
+    if (!sessionStorage.getItem('recargado')) {
+        // Establecer un indicador en sessionStorage para evitar recargas adicionales
+        sessionStorage.setItem('recargado', 'true');
+
+        // Configurar un temporizador para recargar la página después de 4 segundos
+        setTimeout(function() {
+            window.location.reload();
+        }, 4000); // 4000 milisegundos = 4 segundos
+    }
+}
+
+// Llamar a la función para iniciar el proceso
+recargarUnaVez();
+
 
 
 function enviarNotificacionPagina() {
